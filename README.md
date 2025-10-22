@@ -1,10 +1,14 @@
-# 🎓 ScholarRAG
+# 🎓 ScholarRAG: Retrieval-Augmented Q&A System for Academic Documents  
 
-**Retrieval-Augmented Generation (RAG) System for Academic Research**
+**Empowering academic research with intelligent document understanding**  
 
-A complete RAG pipeline built on my Master's thesis: *"Personalized Summarization of Global News: Managing Bias with Large Language Models"*
+**ScholarRAG** is an interactive **Retrieval-Augmented Generation (RAG)** system built using **LangChain**, **OpenAI embeddings**, and **ChromaDB**.  
+It enables **question-answering and summarization** over complex academic documents — in this case, my Master’s thesis:  
+> *"Personalized Summarization of Global News: Managing Bias with Large Language Models"*  
 
-This project demonstrates end-to-end RAG implementation, from document processing to interactive Q&A, showcasing fundamental LLM engineering skills.
+This project demonstrates **end-to-end LLM application engineering**, from document parsing and semantic chunking to retrieval, generation, evaluation, and deployment via an interactive Gradio interface.  
+It’s designed to showcase **hands-on expertise in RAG architectures**, **prompt engineering**, and **vector-based semantic search** — skills essential for modern AI developers and research engineers.  
+
 
 ---
 
@@ -17,6 +21,17 @@ This project demonstrates end-to-end RAG implementation, from document processin
 - ✅ **RAG Pipeline**: Complete retrieval-augmented generation implementation
 - ✅ **Evaluation**: Systematic testing and metrics
 - ✅ **Deployment**: Interactive Gradio interface
+
+
+---
+
+## 🖥️ Demo Screenshot
+
+### Landing Page
+![image alt](https://github.com/tzahan/ScolarRAG/blob/66d95dd4fa9b25f27c6977247d76bcd52415c936/demo_screenshot1.png)
+
+### After Execution
+![image alt](https://github.com/tzahan/ScolarRAG/blob/66d95dd4fa9b25f27c6977247d76bcd52415c936/demo_screenshot2.png)
 
 ---
 
@@ -93,10 +108,6 @@ Tested on 8 questions across different categories:
 - ✅ Comparison questions: 100% accuracy
 
 *See `results/evaluation_results.csv` for detailed breakdown*
-
----
-
-## 🖥️ Demo Screenshot
 
 ---
 
