@@ -1,0 +1,14 @@
+python-dotenv
+langchain 
+langchain-community 
+langchain-openai 
+openai
+chromadb 
+pymupdf
+gradio
+sentence-transformers 
+
+ipykernel
+
+python-dotenv
+seaborn

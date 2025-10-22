@@ -1,0 +1,48 @@
+# Virtual Environment
+myenv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.local
+*.env
+
+
+# Gradio cache
+gradio_cached_examples/
+flagged/
+
+# Vector Database (too large for Git)
+scholar_vectordb/
+chroma_db/
+*.db
+*.sqlite
+
+
+my_thesis.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# macOS
+.DS_Store

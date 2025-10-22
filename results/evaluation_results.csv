@@ -1,0 +1,63 @@
+question_id,question,category,answer,num_sources,retrieved_sections,expected_section,correct_section,answer_length
+1,What is the main research question of this thesis?,overview,"The main research question of the thesis is focused on developing a bias-aware, personalized summarization system for global news using Large Language Models (LLMs). Specifically, it investigates how well current LLMs can generate summaries that are tailored to user preferences while minimizing bias and preserving factual integrity. This central question guides the methodological framework and the design choices throughout the study, as outlined in Chapter 3.",5,"intro,methodology,methodology,methodology,intro",intro,True,66
+2,What methodology was used for bias detection?,technical,"The methodology for bias detection in the thesis primarily involves the use of advanced models and frameworks designed to identify and explain biased language in news articles. One significant framework discussed is FairFrame, which combines transformer-based classifiers with LIME (Local Interpretable Model-Agnostic Explanations) to detect and explain biased phrases. This approach outperforms baseline fairness detection tools by utilizing fine-tuned transformer encoders such as BERT and RoBERTa, enabling binary classification of biased versus neutral sentences (Section 2.2.1).
+
+Additionally, the thesis references the work of Lin et al. (2025), which compares LLM-generated bias detection results to human-annotated ground truths. This comparison highlights systematic biases in models like GPT-3.5, indicating that these models may misclassify articles based on their political leanings (Section 2.2.1).
+
+Overall, the methodology emphasizes the integration of machine learning techniques, particularly transformer models, and the importance of human verification to ensure accurate bias detection.",5,"related_work,discussion,conclusion,discussion,related_work",methodology,False,144
+3,What datasets were used in the evaluation?,technical,"The context provided does not specify the exact datasets used in the evaluation of the thesis. It mentions that the sample enabled controlled comparisons across personalization and bias-mitigation settings but notes that a more extensive dataset spanning diverse topics, languages, and geopolitical contexts would be necessary for robust assessments of model performance and generalization capacity. However, specific details about the datasets themselves are not included in the provided context.",5,"intro,methodology,intro,general,general",methodology,True,69
+4,What are the key findings of this research?,results,"The key findings of the research, as summarized in Table 7 of the thesis, are as follows:
+
+1. **RQ1**: Bias detection is significantly influenced by the phrasing of evaluator prompts. Notably, GPT-4o demonstrated greater sensitivity to subtle biases compared to Gemini.
+
+2. **RQ2**: Personalization of news summaries enhances user alignment without compromising neutrality or readability.
+
+3. **RQ3**: The primary method for controlling bias expression and detection is through prompt engineering.
+
+4. **RQ4**: Factual consistency is maintained across all summarization strategies and is strongly aligned with well-modeled personalization.
+
+These findings highlight the importance of prompt design in bias detection and the effectiveness of personalization in improving user experience while ensuring factual integrity.",5,"discussion,discussion,methodology,general,methodology",results,False,111
+5,How does personalization work in this system?,technical,"Personalization in the system described in the thesis operates through a user preference representation model, where each user is characterized by a vector that encompasses selected attributes. This vector is defined as follows:
+
+- **r**: Reading Level (options: basic, intermediate, expert)
+- **c**: Coverage (options: selective, balanced, full)
+- **a**: Abstractivity (options: extractive, mixed, abstractive)
+- **s**: Structure (options: narrative, bullets)
+- **g**: Granularity (options: low, medium, high)
+
+Users can initialize their vectors through three methods: explicit selection via user interface controls, implicit inference from interaction logs, or default fallback profiles (e.g., a ""general reader"" profile). 
+
+The effectiveness of personalization is evaluated by focusing on three attributes—reading level, coverage, and abstractivity—selected from an originally broader set of five dimensions. This selective inclusion aims to streamline the analysis while still capturing essential aspects of user preferences.
+
+The system employs LLM-generated, context-aware prompts to translate these personalization inputs into summary outputs, achieving near-perfect alignment with user-defined preferences (scores of 4.9–5.0). This indicates that the personalization fidelity is maintained across different content structures and target audiences. Additionally, the analysis suggests that prompt-based personalization can enhance neutrality in summaries, particularly under the Prompt-Based V2 configuration, while ensuring robust factual consistency and personalization fit across various configurations (as noted in the sections on Personalization Fit and Synthesis and Implications). 
+
+Overall, the personalization mechanism is designed to adapt summaries to individual user needs while managing potential biases in the content presented.",5,"related_work,results,methodology,methodology,discussion",methodology,True,235
+6,What are the limitations mentioned in the thesis?,analysis,"The thesis outlines several limitations related to the methodology and scope of the research. These limitations include:
+
+1. **Time Constraints**: The study faced practical constraints regarding the time available for conducting the research, which may have impacted the depth of the investigation.
+
+2. **Reliance on Automated Evaluators**: There is an inherent uncertainty about the full reliability of LLM-based scores across the dataset, raising concerns about the accuracy of automated evaluations.
+
+3. **Budgetary Trade-offs**: Limited resources constrained the extent of model usage and the scope of experiments that could be conducted.
+
+4. **Controlled Personalization Schema**: While personalization was modeled across five attributes, only three were used in experimental evaluations due to complexity and interpretability constraints, potentially limiting the breadth of personalization explored.
+
+5. **Prompt Sensitivity and Model Variance**: The outputs of the LLMs were influenced by factors such as prompt design, sampling temperature, and other generation parameters, which, despite efforts to maintain consistency, remained a source of variability in the results.
+
+6. **Dataset Limitations**: The experiment was confined to 30 news articles from a single dataset, which restricts both topical diversity and linguistic coverage, thereby reducing the robustness of conclusions regarding model generalization.
+
+These limitations are acknowledged in the methodology section (3.6) and highlight the challenges faced in ensuring the validity and applicability of the findings.",5,"intro,methodology,intro,methodology,methodology",discussion,False,215
+7,How does this approach differ from existing work?,comparison,"The approach outlined in the thesis titled ""Personalized Summarization of Global News: Managing Bias with Large Language Models"" differs from existing work in several key ways:
+
+1. **Evaluation Methodology**: The research advances evaluation methodologies by employing LLM-as-judge techniques, such as G-Eval and Reason-then-Score (RTS), which address the limitations of traditional reference-based metrics like ROUGE and BLEU. These modern evaluators focus on capturing high-level semantic qualities, such as factuality and bias, which are often overlooked by conventional metrics (Section 1.6).
+
+2. **Focus on Ethical Alignment**: The study emphasizes ethical considerations by restricting personalization to content-neutral attributes—such as abstractivity, reading level, and structure—while deliberately avoiding dimensions that could reinforce cognitive or ideological biases. This approach aims to enhance information accessibility without compromising editorial integrity or amplifying ideological slant (Section 1.6).
+
+3. **Systematic Evaluations with State-of-the-Art LLMs**: The empirical component of the study utilizes two state-of-the-art proprietary LLMs—GPT-4 and Gemini—to provide comparative insights into their performance across dimensions like bias sensitivity, factual consistency, and personalization alignment. This systematic evaluation yields concrete evidence on how different models and prompt-engineering techniques impact summary quality under fairness and personalization constraints (Section 1.6).
+
+4. **Mitigation Techniques**: The research also contrasts with existing work by integrating advanced mitigation techniques, such as adversarial debiasing and fairness-aware optimization, which enhance adaptability across dynamic news corpora. This hybrid approach offers greater flexibility compared to other methods that may focus solely on isolated sentence de-biasing (Section 2.2.2).
+
+5. **Future Directions for Bias Evaluation**: The thesis proposes future research directions that advocate for layered and multi-faceted bias evaluation, suggesting the use of multi-dimensional prompts to differentiate between various types of bias. This contrasts with existing frameworks that may rely on singular neutrality scores, thereby improving transparency and interpretability in bias assessments (Section 5.6).
+
+Overall, the thesis presents a comprehensive and innovative approach to personalized summarization that prioritizes ethical considerations, advanced evaluation methodologies, and systematic empirical analysis, setting it apart from existing work in the field.",5,"intro,intro,intro,discussion,related_work",related_work,True,322
+8,What evaluation metrics were used?,technical,"The evaluation metrics used in the study included factual consistency, bias neutrality, personalization fit, and readability. These metrics were assessed using summaries evaluated by GPT, and the relationships among these dimensions were further analyzed through Pearson correlation coefficients, as visualized in a correlation heatmap (refer to Section 4.6). Additionally, the study acknowledged certain biases in the evaluation process, such as positional bias, verbosity bias, and instability, which were addressed through various methodological safeguards (see Section 2.5.3 and Section 3).",5,"intro,results,methodology,general,methodology",methodology,True,79
